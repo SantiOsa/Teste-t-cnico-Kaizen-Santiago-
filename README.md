@@ -16,11 +16,49 @@ Este projeto demonstra:
 
 ---
 
-## 🚀 Como Executar o Projeto
+## 🚀 Instalação e Configuração
 
-### **Passo 1: Instalar as Dependências**
+### **Requisitos**
+- Python 3.8 ou superior
+- Conexão com internet (para acessar a API)
+- Git (para clonar o repositório)
 
-Abra o terminal/prompt de comando e execute:
+### **Passo 1: Clonar o Repositório**
+
+    git clone https://github.com/SantiOsa/Teste-t-cnico-Kaizen-Santiago-.git
+    cd Teste-t-cnico-Kaizen-Santiago-
+
+### **Passo 2: Criar Ambiente Virtual**
+
+IMPORTANTE: Use um ambiente virtual para isolar as dependências do projeto.
+
+No Windows (PowerShell):
+
+    python -m venv .venv
+
+No Linux/Mac:
+
+    python3 -m venv .venv
+
+### **Passo 3: Ativar o Ambiente Virtual**
+
+No Windows (PowerShell):
+
+    .\.venv\Scripts\Activate.ps1
+
+NOTA: Se aparecer erro de permissão, execute uma vez:
+
+    Set-ExecutionPolicy -ExecutionPolicy RemoteSigned -Scope CurrentUser
+
+No Linux/Mac:
+
+    source .venv/bin/activate
+
+Após ativar, você verá (.venv) no início da linha do terminal.
+
+### **Passo 4: Instalar as Dependências**
+
+Com o ambiente virtual ativo, execute:
 
     pip install -r requirements.txt
 
@@ -30,11 +68,25 @@ Isso instalará apenas as bibliotecas essenciais:
 - streamlit - Framework para dashboard interativo
 - plotly - Visualizações e gráficos interativos
 
-### **Passo 2: Executar o ETL**
+---
+
+## 🎮 Como Executar o Projeto
+
+IMPORTANTE: Sempre ative o ambiente virtual antes de executar os scripts!
+
+Windows:
+
+    .\.venv\Scripts\Activate.ps1
+
+Linux/Mac:
+
+    source .venv/bin/activate
+
+### **Passo 1: Executar o ETL**
 
 O ETL extrai os dados da API, transforma e salva em arquivos CSV na pasta data/.
 
-Execute no terminal:
+Com o ambiente virtual ativo, execute no terminal:
 
     python etl.py
 
@@ -84,13 +136,48 @@ Execute no terminal:
 
 ---
 
-### **Passo 3: Executar o Dashboard Streamlit**
+### **Passo 2: Executar o Dashboard Streamlit**
 
 Após executar o ETL com sucesso, inicie o dashboard:
 
     streamlit run streamlit_app.py
 
 O Streamlit abrirá automaticamente no navegador (geralmente em http://localhost:8501 ou http://localhost:8502).
+
+---
+
+## 📂 Estrutura de Arquivos Gerados
+
+Após executar o ETL, será criada automaticamente a pasta data/ contendo:
+
+    data/
+    ├── pokemons.csv      # Dados completos dos Pokémon
+    ├── battles.csv       # Histórico de batalhas
+    └── metricas.json     # Estatísticas e métricas calculadas
+
+---
+
+## 🔄 Uso Diário
+
+Após a instalação inicial, toda vez que abrir um novo terminal:
+
+1. Ative o ambiente virtual
+
+Windows:
+
+    .\.venv\Scripts\Activate.ps1
+
+Linux/Mac:
+
+    source .venv/bin/activate
+
+2. (Opcional) Atualize os dados executando o ETL novamente
+
+    python etl.py
+
+3. Inicie o dashboard
+
+    streamlit run streamlit_app.py
 
 ---
 
