@@ -34,7 +34,9 @@ IMPORTANTE: Use um ambiente virtual para isolar as dependências do projeto.
 
 No Windows (PowerShell):
 
-    python -m venv .venv
+    py -m venv .venv
+
+NOTA: Se o comando `python` não funcionar no Windows, use `py` em vez de `python`. Isso acontece quando o Windows redireciona `python` para a Microsoft Store.
 
 No Linux/Mac:
 
@@ -327,6 +329,17 @@ O dashboard utiliza um tema personalizado inspirado na Pokédex clássica:
 - Graceful degradation (continua com dados parciais)
 
 ## 🐛 Solução de Problemas
+
+### **Erro: "Python não foi encontrado" no Windows**
+Se aparecer a mensagem que redireciona para Microsoft Store:
+1. Use `py` em vez de `python` para criar o ambiente virtual:
+   ```
+   py -m venv .venv
+   ```
+2. **OU** desabilite o alias do Windows:
+   - Abra **Configurações** → **Aplicativos** → **Aplicativos e recursos**
+   - Clique em **Aliases de execução de aplicativo**
+   - Desative os aliases para `python.exe` e `python3.exe`
 
 ### **Erro: Módulo não encontrado**
 

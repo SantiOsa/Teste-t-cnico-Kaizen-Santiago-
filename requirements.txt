@@ -1,5 +1,4 @@
 requests
 pandas
-pyarrow<22,>=15.0.0
 streamlit
 plotly
